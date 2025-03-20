@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class VasicVaribles : MonoBehaviour
 {
@@ -17,6 +14,24 @@ public class VasicVaribles : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("게임 진행"); //유니티 디버그에 메세지를 출력
+        
+    }
+
+    private void HandleMovement(Vector3 direction)
+    {
+        transform.Translate(direction * Time.deltaTime);
+    }
+
+
+    public void Byeitem()
+    {
+        if (gold > 50)
+        {
+            Debug.Log("아이템 살수 있다");
+        }
+        else
+        {
+            Debug.Log("돈 없음");
+        }
     }
 }
